@@ -1,0 +1,85 @@
+/* Dashboard Styles */
+.company-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  max-width: 250px; /* Set a maximum width for the company card */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+/* Styles for the hover effect */
+.company-card:hover .company-info {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Hidden info initially */
+.company-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:bisque;  /* Semi-transparent background */
+  color: black;
+  padding: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Add some transition for the card */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);  /* Slightly enlarge the card on hover */
+}
+
+/* Additional styling for the card title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Flexbox layout for company cards */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Ensures cards wrap to the next line */
+  justify-content: space-between;
+}
+
+.col-md-4 {
+  width: 100%;
+  padding: 15px;
+  flex: 1 1 30%; /* Set width to 30% to show 3 cards per row */
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .col-md-4 {
+    flex: 1 1 48%; /* Cards will take 48% width on medium screens (2 per row) */
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-4 {
+    flex: 1 1 100%; /* Cards will take 100% width on small screens (1 per row) */
+  }
+
+  .company-card {
+    margin-bottom: 1rem; /* Add space between cards on small screens */
+  }
+
+  .company-card .card-title {
+    font-size: 1rem;
+  }
+
+  .company-info {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,437 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+/* Full height of the sections */
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+}
+
+/* Section 1 Styling */
+
+#section1 {
+  position: relative;
+  overflow: hidden;
+  background-color: #c9a4f7; /* Changed to purple background */
+}
+
+@keyframes scroll {
+  
+  0% {
+    transform: translateX(0); /* Starts at the normal position */
+  }
+  100% {
+    transform: translateX(-100%); /* Scrolls completely to the left */
+  }
+}
+
+.background-image {
+  display: none; /* Remove the background image */
+}
+
+.image-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  justify-content: center;
+  height: 100%;
+  color: black;
+  text-align: left;
+  padding-left: 5%; /* Add some padding for spacing */
+}
+/* Animation for .main-text */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-text {
+  max-width: 800px;
+  animation: fadeInSlide 1s ease-out; /* Apply fade-in and slide-up animation */
+}
+
+/* Animation for .main-title */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  margin-left: 0;
+  animation: bounceIn 1s ease-in-out; /* Apply bounce animation */
+}
+
+/* Animation for .secondary-title */
+@keyframes colorChange {
+  0% {
+    color: black;
+  }
+  100% {
+    color: #007bff; /* Change to a blue color, or any color you prefer */
+  }
+}
+
+.secondary-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: black;
+  animation: colorChange 2s ease-in-out infinite alternate; /* Apply color change animation */
+}
+
+/* Animation for .subtitle */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin: 20px 0 30px;
+  font-weight: 400;
+  animation: fadeInUp 1s ease-out; /* Apply fade-in and slide-up animation */
+}
+
+.auth-buttons {
+  margin-top: 12px;
+}
+
+.auth-btn {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #4caf50, #45a3f5);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: linear-gradient(90deg, #45a049, #457bf5);
+}
+
+/* Top-right Sign In Button Styling */
+.auth-btn.top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: -1; /* Corrected z-index to ensure visibility */
+  transition: background-color 0.3s ease;
+}
+
+.auth-btn.top-right:hover {
+  background-color: #45a049;
+}
+
+/* Logo and Text Styling */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1rem; /* Smaller font size */
+  font-weight: normal;
+  color: black; /* Black text color */
+  text-transform: capitalize; /* Ensure "InvestIQ" is capitalized */
+}
+
+/* Section 2 Styling */
+#section2 {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#section2 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#section2 p {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#gif-container {
+  width: 100%;
+  height: auto; /* Adjust container height */
+  position: relative;
+}
+
+#gif-container img {
+  width: 40%; /* Reduced size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the GIF scales properly */
+  margin: 0 auto; /* Center align the GIF */
+  display: block; /* Center alignment */
+}
+
+/* Section 3 Styling */
+#section3 {
+  background-color: #c9a4f7;
+  color: black;
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between; /* Space between FAQ section and image */
+  align-items: flex-start; /* Align FAQ at the top */
+  gap: 40px; /* Space between the FAQ section and image */
+}
+#section3 h3{
+    align-items: center;
+}
+/* FAQ Section */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1500px; /* Increased size for FAQ section */
+  margin: 0 auto;
+  position: relative; /* Keep it properly positioned */
+}
+
+.faq-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.faq-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Image positioning to the right */
+#section3 img {
+  max-width: 35%; /* Adjust size of the image */
+  height: auto;
+  position: absolute;
+  padding-left: 40px;
+  right: 20px;
+  top: 50%; /* Position image vertically centered */
+  transform: translateY(-50%);
+}
+
+
+/* Section 4 */
+#section4 {
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 40px 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  width: 450px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+}
+
+.news-link {
+  margin-top: 20px;
+}
+
+.news-link a {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: brown;
+  text-decoration: underline;
+}
+
+/* Basic styles for the footer */
+.footer {
+  background-color: #f9f9f9;
+  padding: 40px 10px;
+  border-top: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+footer h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+footer p, footer ul {
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-icons img {
+  width: 25px;
+  height: auto;
+}
+.market-tickers {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.ticker {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticker-logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.ticker-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticker-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.ticker-value {
+  font-size: 12px;
+  color: #aaa;
+}
+
